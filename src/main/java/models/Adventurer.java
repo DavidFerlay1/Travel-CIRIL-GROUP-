@@ -11,7 +11,11 @@ public class Adventurer {
         return this.position;
     }
 
-    // Génère une position en fonction de la direction qu'on veut prendre
+    /**
+     * @param direction Caractère symbole de la direction N,O,S,E
+     * @throws IllegalArgumentException si le symbole est invalide
+     * @return Vector2 La position si l'aventurier se déplaçait dans une direction
+     */
     public Vector2 simulateMovement(char direction) {
         switch(Character.toUpperCase(direction)) {
             case 'S':
@@ -22,11 +26,10 @@ public class Adventurer {
                 return new Vector2(this.position.x + 1, this.position.y);
             case 'O':
                 return new Vector2(this.position.x - 1, this.position.y);
-            default: return null;
+            default: throw new IllegalArgumentException("Direction illégale " + direction);
         }
     }
 
-    // Applique la nouvelle position
     public void setPosition(Vector2 position) {
         this.position = position;
     }

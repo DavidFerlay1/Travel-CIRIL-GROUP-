@@ -2,8 +2,7 @@ package models;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AdventurerTest {
     @Test
@@ -13,6 +12,6 @@ public class AdventurerTest {
         assertEquals(new Vector2(0, 1), adventurer.simulateMovement('S'), "La simulation de mouvement au sud a échoué");
         assertEquals(new Vector2(1, 0), adventurer.simulateMovement('E'), "La simulation de mouvement à l'est a échoué");
         assertEquals(new Vector2(-1, 0), adventurer.simulateMovement('O'), "La simulation de mouvement à l'ouest a échoué");
-        assertNull(adventurer.simulateMovement('X'), "Le retour devrait être Null car la direction est invalide");
+        assertThrows(IllegalArgumentException.class, () -> adventurer.simulateMovement('X'), "La direction est invalide, doit lever une IllegalArgumentException");
     }
 }

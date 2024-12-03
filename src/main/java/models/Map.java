@@ -14,6 +14,10 @@ public class Map {
     }
 
     // Chargement du tileset depuis un chemin vers un fichier texte
+
+    /**
+     * @param filePath chemin du fichier contenant la ma
+     */
     private void loadTiles(String filePath) {
         try {
             List<String> lines = Files.readAllLines(Paths.get(filePath));
@@ -24,7 +28,11 @@ public class Map {
         }
     }
 
-    // Renvoi true si la tile est un arbre ou en dehors de la map, false sinon
+    /**
+     *
+     * @param position la position à vérifier
+     * @return true si collision ou hors map, false sinon
+     */
     public boolean collides(Vector2 position) {
         try {
             return this.tiles.get(position.y).charAt(position.x) == '#';
@@ -33,6 +41,10 @@ public class Map {
         }
     }
 
+    /**
+     *
+     * @return true si la map contient des tiles, false sinon
+     */
     public boolean isTilesetReady() {
         return !this.tiles.isEmpty();
     }
