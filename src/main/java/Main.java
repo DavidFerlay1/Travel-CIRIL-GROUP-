@@ -6,7 +6,7 @@ import models.Vector2;
 public class Main {
     public static void main(String[] args) {
 
-        Map map = new Map("src/main/resource:ls/carte.txt");
+        Map map = new Map("src/main/resources/carte.txt");
 
         if(map.isTilesetReady()) {
             // Initialisation du processus avec un aventurier avec une position de départ x:3, y:0
