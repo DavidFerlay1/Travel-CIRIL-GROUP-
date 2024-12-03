@@ -4,6 +4,8 @@ public class Adventurer {
     private Vector2 position;
 
     public Adventurer(Vector2 firstPosition) {
+        if(firstPosition == null)
+            firstPosition = new Vector2(0, 0);
         this.position = firstPosition;
     }
 
