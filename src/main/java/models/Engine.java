@@ -12,7 +12,7 @@ public class Engine {
 
     public void process(String path) {
 
-        System.out.printf("POSITION DE DEPART: [X: %d, Y: %d]", this.adventurer.getPosition().x, this.adventurer.getPosition().y);
+        System.out.printf("POSITION DE DEPART: [X: %d, Y: %d]\n", this.adventurer.getPosition().x, this.adventurer.getPosition().y);
 
         for(char node : path.toCharArray()) {
             Vector2 position = this.adventurer.simulateMovement(node);
